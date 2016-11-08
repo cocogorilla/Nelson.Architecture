@@ -249,9 +249,15 @@ namespace Nelson.Architecture.Refactor
 
         [Theory, Gen]
         public void CharacterizeRefactoredVersion(
-            IDiscountRepository dummyRepository,
-            IAuthorize dummyAuthorizer)
+            Product dummyProduct,
+            Mock<IDiscountRepository> dummyRepository,
+            Mock<IAuthorize> dummyAuthorizer)
         {
+            dummyProduct.DiscountType = "percentage";
+            dummyRepository.Setup(x => x.GetDiscountForType(It.IsAny<string>(), It.IsAny<string>())).Returns(.5M);
+            dummyAuthorizer.Setup(x => x.IsAuthorized()).Returns(true);
+
+            // composition root
             var percentoff = new PercentageDiscountStrategy();
             var moneyoff = new MoneyOffDiscountStrategy();
             var unknown = new UnknownDiscountStrategy();
@@ -262,10 +268,12 @@ namespace Nelson.Architecture.Refactor
                 moneyoff,
                 unknown
             });
-            var discountCalculator = new RefactoredProductClass(dummyRepository, runfirst);
-            var authorizedSut = new AuthorizableDiscountCalculator(dummyAuthorizer, discountCalculator);
-            // does compile
-            // does not throw
+            var discountCalculator = new RefactoredProductClass(dummyRepository.Object, runfirst);
+            var authorizedSut = new AuthorizableDiscountCalculator(dummyAuthorizer.Object, discountCalculator);
+
+            var actual = authorizedSut.GetDiscountPrice(dummyProduct);
+
+            Assert.Equal(dummyProduct.Price * .5M, actual);
         }
     }
 }
