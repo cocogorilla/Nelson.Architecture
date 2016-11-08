@@ -254,7 +254,9 @@ namespace Nelson.Architecture.Refactor
             Mock<IAuthorize> dummyAuthorizer)
         {
             dummyProduct.DiscountType = "percentage";
-            dummyRepository.Setup(x => x.GetDiscountForType(It.IsAny<string>(), It.IsAny<string>())).Returns(.5M);
+            dummyRepository.Setup(x => x.GetDiscountForType(
+                It.IsAny<string>(),
+                It.IsAny<string>())).Returns(.5M);
             dummyAuthorizer.Setup(x => x.IsAuthorized()).Returns(true);
 
             // composition root
@@ -264,12 +266,17 @@ namespace Nelson.Architecture.Refactor
 
             var runfirst = new RunFirstCompositeStrategy(new IDiscountStrategy[]
             {
-                percentoff,
-                moneyoff,
-                unknown
+        percentoff,
+        moneyoff,
+        unknown
             });
-            var discountCalculator = new RefactoredProductClass(dummyRepository.Object, runfirst);
-            var authorizedSut = new AuthorizableDiscountCalculator(dummyAuthorizer.Object, discountCalculator);
+            var discountCalculator = new RefactoredProductClass(
+                dummyRepository.Object,
+                runfirst);
+            var authorizedSut = new AuthorizableDiscountCalculator(
+                dummyAuthorizer.Object,
+                discountCalculator);
+            // end composition root
 
             var actual = authorizedSut.GetDiscountPrice(dummyProduct);
 

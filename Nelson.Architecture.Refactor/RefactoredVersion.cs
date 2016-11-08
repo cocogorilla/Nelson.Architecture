@@ -31,16 +31,22 @@ namespace Nelson.Architecture.Refactor
         private readonly IDiscountRepository _discountRepository;
         private readonly IDiscountStrategy _discountStrategy;
 
-        public RefactoredProductClass(IDiscountRepository discountRepository, IDiscountStrategy discountStrategy)
+        public RefactoredProductClass(
+            IDiscountRepository discountRepository,
+            IDiscountStrategy discountStrategy)
         {
-            if (discountRepository == null) throw new ArgumentNullException(nameof(discountRepository));
-            if (discountStrategy == null) throw new ArgumentNullException(nameof(discountStrategy));
+
+            if (discountRepository == null) throw new
+                ArgumentNullException(nameof(discountRepository));
+            if (discountStrategy == null) throw new
+                ArgumentNullException(nameof(discountStrategy));
             _discountRepository = discountRepository;
             _discountStrategy = discountStrategy;
         }
         public decimal GetDiscountPrice(Product p)
         {
-            var discount = _discountRepository.GetDiscountForType(p.DiscountType, p.ProductType);
+            var discount = _discountRepository.GetDiscountForType(
+                p.DiscountType, p.ProductType);
             return _discountStrategy.DiscountProduct(p, discount);
         }
     }
@@ -50,10 +56,15 @@ namespace Nelson.Architecture.Refactor
         private readonly IAuthorize _authorizer;
         private readonly IDiscountQuery _baseQuery;
 
-        public AuthorizableDiscountCalculator(IAuthorize authorizer, IDiscountQuery baseQuery)
+        public AuthorizableDiscountCalculator(
+            IAuthorize authorizer,
+            IDiscountQuery baseQuery)
         {
-            if (authorizer == null) throw new ArgumentNullException(nameof(authorizer));
-            if (baseQuery == null) throw new ArgumentNullException(nameof(baseQuery));
+
+            if (authorizer == null) throw new
+                ArgumentNullException(nameof(authorizer));
+            if (baseQuery == null) throw new
+                ArgumentNullException(nameof(baseQuery));
             _authorizer = authorizer;
             _baseQuery = baseQuery;
         }

@@ -7,7 +7,8 @@ namespace Nelson.Architecture.Refactor
 {
     public class OriginalProductClass
     {
-        private string ConnectionString => ConfigurationManager.ConnectionStrings["ProductAppConnString"].ConnectionString;
+        private string ConnectionString =>
+            ConfigurationManager.ConnectionStrings["ProductAppConnString"].ConnectionString;
         public decimal GetDiscountPrice(Product p)
         {
             if (AuthContext.IsAuthorized())
@@ -21,10 +22,10 @@ namespace Nelson.Architecture.Refactor
                             DiscountType = "percent",
                             p.ProductType
                         }, commandType: CommandType.StoredProcedure);
-                        if (pdiscount < 0)
-                            throw new InvalidDiscountException("Discount was less than zero");
-                        if (pdiscount > 1)
-                            throw new InvalidDiscountException("Discount was greater than one");
+                        if (pdiscount < 0) throw new
+                            InvalidDiscountException("Discount was less than zero");
+                        if (pdiscount > 1) throw new
+                            InvalidDiscountException("Discount was greater than one");
                         return p.Price * pdiscount;
                     }
                 }
@@ -37,10 +38,10 @@ namespace Nelson.Architecture.Refactor
                             DiscountType = "moneyoff",
                             p.ProductType
                         }, commandType: CommandType.StoredProcedure);
-                        if (mdiscount < 0)
-                            throw new InvalidDiscountException("Discount was less than zero");
-                        if (mdiscount > p.Price)
-                            throw new InvalidDiscountException("Discount exceeded product price");
+                        if (mdiscount < 0) throw new
+                            InvalidDiscountException("Discount was less than zero");
+                        if (mdiscount > p.Price) throw new
+                            InvalidDiscountException("Discount exceeded product price");
                         return p.Price - mdiscount;
                     }
                 }
