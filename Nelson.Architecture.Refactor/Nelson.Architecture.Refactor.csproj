@@ -50,8 +50,8 @@
       <HintPath>..\packages\AutoFixture.AutoMoq.3.50.2\lib\net40\Ploeh.AutoFixture.AutoMoq.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ploeh.AutoFixture.Xunit, Version=3.50.2.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoFixture.Xunit.3.50.2\lib\net40\Ploeh.AutoFixture.Xunit.dll</HintPath>
+    <Reference Include="Ploeh.AutoFixture.Xunit2, Version=3.50.2.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoFixture.Xunit2.3.50.2\lib\net45\Ploeh.AutoFixture.Xunit2.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -86,9 +86,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthContext.cs" />
+    <Compile Include="Gen.cs" />
     <Compile Include="RefactoredVersion.cs" />
+    <Compile Include="RefactoringTests.cs" />
     <Compile Include="UnauthorizedException.cs" />
-    <Compile Include="DiscountTypes.cs" />
     <Compile Include="InvalidDiscountException.cs" />
     <Compile Include="OriginalProductClass.cs" />
     <Compile Include="Product.cs" />

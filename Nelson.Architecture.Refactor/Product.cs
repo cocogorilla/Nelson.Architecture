@@ -4,6 +4,6 @@
     {
         public decimal Price { get; set; }
         public string ProductType { get; set; }
-        public DiscountTypes DiscountType { get; set; }
+        public string DiscountType { get; set; }
     }
 }

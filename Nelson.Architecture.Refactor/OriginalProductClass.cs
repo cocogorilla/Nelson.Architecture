@@ -12,7 +12,7 @@ namespace Nelson.Architecture.Refactor
         {
             if (AuthContext.IsAuthorized())
             {
-                if (p.DiscountType == DiscountTypes.Percentage)
+                if (p.DiscountType == "percent")
                 {
                     using (var conn = new SqlConnection(ConnectionString))
                     {
@@ -22,13 +22,13 @@ namespace Nelson.Architecture.Refactor
                             p.ProductType
                         }, commandType: CommandType.StoredProcedure);
                         if (pdiscount < 0)
-                            throw new InvalidDiscountException("Discount was less than zero... weird");
+                            throw new InvalidDiscountException("Discount was less than zero");
                         if (pdiscount > 1)
-                            throw new InvalidDiscountException("Discount was greater than one... weird");
+                            throw new InvalidDiscountException("Discount was greater than one");
                         return p.Price * pdiscount;
                     }
                 }
-                else if (p.DiscountType == DiscountTypes.MoneyOff)
+                else if (p.DiscountType == "moneyoff")
                 {
                     using (var conn = new SqlConnection(ConnectionString))
                     {
@@ -38,9 +38,9 @@ namespace Nelson.Architecture.Refactor
                             p.ProductType
                         }, commandType: CommandType.StoredProcedure);
                         if (mdiscount < 0)
-                            throw new InvalidDiscountException("Discount was less than zero... weird");
+                            throw new InvalidDiscountException("Discount was less than zero");
                         if (mdiscount > p.Price)
-                            throw new InvalidDiscountException("Discount exceeded product price... weird");
+                            throw new InvalidDiscountException("Discount exceeded product price");
                         return p.Price - mdiscount;
                     }
                 }

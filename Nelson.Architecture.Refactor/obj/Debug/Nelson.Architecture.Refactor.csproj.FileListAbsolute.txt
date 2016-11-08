@@ -10,7 +10,6 @@ c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Castle.Co
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Moq.dll
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Ploeh.AutoFixture.AutoMoq.dll
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Ploeh.AutoFixture.dll
-c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Ploeh.AutoFixture.Xunit.dll
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\xunit.abstractions.dll
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\xunit.assert.dll
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\xunit.core.dll
@@ -20,7 +19,6 @@ c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Castle.Co
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Moq.xml
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Ploeh.AutoFixture.xml
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Ploeh.AutoFixture.AutoMoq.xml
-c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Ploeh.AutoFixture.Xunit.xml
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\xunit.abstractions.xml
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\xunit.assert.pdb
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\xunit.assert.xml
@@ -29,3 +27,5 @@ c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\xunit.cor
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\xunit.execution.desktop.pdb
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\xunit.execution.desktop.xml
 c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\xunit.extensions.xml
+c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Ploeh.AutoFixture.Xunit2.dll
+c:\Projects\Nelson.Architecture\Nelson.Architecture.Refactor\bin\Debug\Ploeh.AutoFixture.Xunit2.xml
