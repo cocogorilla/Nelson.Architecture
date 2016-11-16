@@ -266,9 +266,9 @@ namespace Nelson.Architecture.Refactor
 
             var runfirst = new RunFirstCompositeStrategy(new IDiscountStrategy[]
             {
-        percentoff,
-        moneyoff,
-        unknown
+                percentoff,
+                moneyoff,
+                unknown
             });
             var discountCalculator = new RefactoredProductClass(
                 dummyRepository.Object,

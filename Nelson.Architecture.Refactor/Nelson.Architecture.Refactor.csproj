@@ -89,6 +89,7 @@
     <Compile Include="Gen.cs" />
     <Compile Include="RefactoredVersion.cs" />
     <Compile Include="RefactoringTests.cs" />
+    <Compile Include="tbd.cs" />
     <Compile Include="UnauthorizedException.cs" />
     <Compile Include="InvalidDiscountException.cs" />
     <Compile Include="OriginalProductClass.cs" />
